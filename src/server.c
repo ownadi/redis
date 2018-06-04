@@ -2725,6 +2725,7 @@ void authCommand(client *c) {
     } else {
       c->authenticated = 0;
       addReplyError(c,"invalid password");
+      serverLog(LL_NOTICE, "Auth failed for %s", c->cip);
     }
 }
 

@@ -645,6 +645,7 @@ static void acceptCommonHandler(int fd, int flags, char *ip) {
     }
 
     server.stat_numconnections++;
+    strncpy(c->cip, ip, NET_IP_STR_LEN);
     c->flags |= flags;
 }
 

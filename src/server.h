@@ -691,6 +691,7 @@ typedef struct readyList {
  * Clients are taken in a linked list. */
 typedef struct client {
     uint64_t id;            /* Client incremental unique ID. */
+    char cip[NET_IP_STR_LEN]; /* Client IP */
     int fd;                 /* Client socket. */
     redisDb *db;            /* Pointer to currently SELECTed DB. */
     robj *name;             /* As set by CLIENT SETNAME. */
